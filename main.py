@@ -3,8 +3,9 @@ import requests
 import json
 import csv
 
-oddshark = requests.get("https://www.oddsshark.com/ncaab/odds")
-kenpom = requests.get("https://kenpom.com/")
+oddshark_odds = requests.get("https://www.oddsshark.com/ncaab/odds")
+kenpom_rankings = requests.get("https://kenpom.com/")
+kenpom_height_exp = requests.get("https://kenpom.com/height.php")
 
 if oddshark.status_code == 200 & kenpom.status_code == 200:
   oddshark_soup = BeautifulSoup(oddshark.content, 'html.parser')
